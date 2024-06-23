@@ -41,15 +41,6 @@ const mailer = async (req, res) => {
     from: `${email}`,
     to: process.env.GMAIL_ID,
     subject: `Quotation Request for ${partNumber}`,
-    text: `
-      Name: ${firstName} ${lastName}.
-      email: ${email}.
-      phone: ${phoneNumber}.
-      Part Number: ${partNumber}.
-      manufacturer: ${manufacturer}.
-      quantity: ${quantity}.
-      speacialInstructions: ${speacialInstructions}
-    `,
     html: htmlContent,
   };
 

@@ -4,11 +4,14 @@ import RfqFormInput from "./RfqFormInput";
 import { string } from "prop-types";
 import useRFQ from "../../hooks/useRFQ";
 import ReCAPTCHA from "react-google-recaptcha";
+import BouncingCircles from "../BouncingCircles";
 
 const RfqForm = () => {
   const { sendRFQ } = useRFQ();
   const captchaRef = useRef(null);
   const [open, setOpen] = useState(false);
+  const [onEmailSuccess, setOnEmailSuccess] = useState(null);
+  const [RfqLoading, setRfqLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -53,13 +56,25 @@ const RfqForm = () => {
       token;
 
     if (isAllField) {
+      setOnEmailSuccess(null);
+      setRfqLoading(true);
       formData.token = token;
-      await sendRFQ(formData);
+      const { data, status } = await sendRFQ(formData);
+      setRfqLoading(false);
+      if (status === 200) {
+        setOnEmailSuccess(data);
+      }
     }
   };
   const handleOnChange = (value) => {
     setError(null);
   };
+
+  useEffect(() => {
+    console.log("hello");
+    setOnEmailSuccess(null);
+    setError(null);
+  }, []);
 
   return (
     <div className="bg-white">
@@ -149,7 +164,6 @@ const RfqForm = () => {
                   required="required"
                   id={7}
                   handelChange={handelChange}
-                  max={10}
                 />
 
                 {/* ADD BUTTON */}
@@ -188,11 +202,13 @@ const RfqForm = () => {
               onChange={handleOnChange}
             />
             <p className="text-red-700 text-xs">{error}</p>
+            <p className="text-red-700 text-xs">{onEmailSuccess}</p>
             <button
               type="submit"
               className="p-3 text-sm font-semibold text-white bg-red-700 px-8 tracking-[1px]"
             >
-              SUBMIT
+              {RfqLoading ? <BouncingCircles /> : "SUBMIT"}
+              {/* <BouncingCircles /> */}
             </button>
           </form>
         </div>
