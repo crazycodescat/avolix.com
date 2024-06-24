@@ -27,7 +27,7 @@ const Header = () => {
     }
   };
   return (
-    <header className="flex flex-col gap-2 bg-neutral-800 pt-4 relative font-Inter">
+    <header className="flex flex-col gap-2 bg-black pt-4 relative font-Inter">
       <AnimatePresence>
         {open && <MobileNavigation navigationToggler={navigationToggler} />}
       </AnimatePresence>
@@ -40,11 +40,11 @@ const Header = () => {
             >
               <IoMenu fontSize={24} />
             </button>
-            <div className="flex p-3">
+            <div className="flex">
               <Link to="/">
                 <img
                   className="w-20"
-                  src="https://res.cloudinary.com/ddx7todbr/image/upload/v1713606629/Electronics%20Parts%20Listing%20Website/s0l9tr2tn1qdzdbupymp.avif"
+                  src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719227095/Electronics%20Parts%20Listing%20Website/azjar0db1ukk0wxya6ci.png"
                   alt=""
                 />
               </Link>
@@ -77,7 +77,7 @@ const Header = () => {
             />
             <button
               type="submit"
-              className="flex items-center justify-center bg-red-600 w-16 rounded-tr-md rounded-br-md"
+              className="flex items-center justify-center bg-black w-16 rounded-tr-md rounded-br-md"
             >
               <FaMagnifyingGlass />
             </button>
@@ -86,7 +86,7 @@ const Header = () => {
           {enterPartNumber && (
             <div className="">
               <p className="text-base text-red-600 font-semibold uppercase underline">
-                Enter Any Part Number
+                Enter Part Number
               </p>
             </div>
           )}

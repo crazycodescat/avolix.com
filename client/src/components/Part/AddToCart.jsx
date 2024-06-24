@@ -45,7 +45,7 @@ const AddToCart = () => {
         </div>
         {/* ADD TO CART BUTTON */}
         <div className="">
-          <button className="p-4 bg-red-600 text-white font-semibold rounded-full w-full">
+          <button className="p-4 bg-black text-white font-semibold rounded-full w-full">
             ADD TO CART
           </button>
         </div>

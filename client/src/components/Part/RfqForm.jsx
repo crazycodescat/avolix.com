@@ -71,7 +71,6 @@ const RfqForm = () => {
   };
 
   useEffect(() => {
-    console.log("hello");
     setOnEmailSuccess(null);
     setError(null);
   }, []);
@@ -79,15 +78,15 @@ const RfqForm = () => {
   return (
     <div className="bg-white">
       <div
-        className="flex justify-between items-center border border-solid border-red-400 p-2 bg-red-100 cursor-pointer"
+        className="flex justify-between items-center p-2 bg-black cursor-pointer text-white"
         onClick={rfqFormToggler}
       >
         <h1 className="text-base font-semibold">Request Quotation</h1>
-        <div className="p-1 rounded-full border border-solid border-red-400 bg-page-bg">
+        <div className="p-1 rounded-full bg-white">
           <FaChevronDown
-            className={
+            className={`text-black ${
               open ? `rotate-180 duration-300` : `rotate-0 duration-300`
-            }
+            }`}
             fontSize={12}
           />
         </div>
@@ -205,7 +204,7 @@ const RfqForm = () => {
             <p className="text-red-700 text-xs">{onEmailSuccess}</p>
             <button
               type="submit"
-              className="p-3 text-sm font-semibold text-white bg-red-700 px-8 tracking-[1px]"
+              className="p-3 text-sm font-semibold text-white bg-black px-8 tracking-[1px]"
             >
               {RfqLoading ? <BouncingCircles /> : "SUBMIT"}
               {/* <BouncingCircles /> */}

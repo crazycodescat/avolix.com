@@ -15,7 +15,7 @@ const MobileNavigation = ({ navigationToggler }) => {
         <div className="flex">
           <img
             className="w-20"
-            src="https://res.cloudinary.com/ddx7todbr/image/upload/v1713606629/Electronics%20Parts%20Listing%20Website/s0l9tr2tn1qdzdbupymp.avif"
+            src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719227095/Electronics%20Parts%20Listing%20Website/azjar0db1ukk0wxya6ci.png"
             alt=""
           />
         </div>

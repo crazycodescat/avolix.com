@@ -3,7 +3,7 @@
 import { FaShapes, FaSearchDollar } from "react-icons/fa";
 import { BsBoxSeam } from "react-icons/bs";
 
-const PriceBox = ({ parts, img }) => {
+const PriceBox = ({ parts, img, distributorName }) => {
   function removeRupeeSign(price) {
     const numberString = price.replace(/[^0-9.]/g, "");
     return parseFloat(numberString);
@@ -49,7 +49,7 @@ const PriceBox = ({ parts, img }) => {
                       }`}
                     </p>
                     <div className="max-w-[60px]">
-                      <img src={`${img}`} alt="" />
+                      <p>{distributorName}</p>
                     </div>
                   </div>
                   <table className="w-full">
@@ -100,7 +100,7 @@ const PriceBox = ({ parts, img }) => {
               <div className="bg-white">
                 <div className="flex justify-between gap-2 items-center py-4 px-2">
                   <div className="max-w-[60px]">
-                    <img src={img} alt="" />
+                    <p className="text-black">{distributorName}</p>
                   </div>
                 </div>
                 <table className="w-full">
