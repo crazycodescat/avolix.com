@@ -44,55 +44,10 @@ const formatResponse = (data) => {
   }
 };
 
-// const sortArr = (response) => {
-//   // console.log(response);
-
-//   if (response?.data?.Products?.length > 0) {
-//     const variations = response.data.Products[0].ProductVariations;
-//     // console.log(variations);
-//     const sortedVariations = variations.map((variation) => {
-//       // console.log(variation);
-
-//       const isCutTape = (name) => name === 'Cut Tape (CT)';
-//       const isDigiReel = (name) => name === 'Digi-Reel®';
-
-//       // const condition =
-//       //   (isCutTape(variation.PackageType.Name) ||
-//       //     isDigiReel(variation.PackageType.Name)) &&
-//       //   (isDigiReel(variations[i]?.PackageType.Name) ||
-//       //     isCutTape(variations[i]?.PackageType.Name));
-
-//       // console.log(condition);
-//       const condition =
-//         isCutTape(variation.PackageType.Name) ||
-//         isDigiReel(variation.PackageType.Name);
-//       // console.log(condition);
-//       if (condition) {
-//         // console.log(variation.StandardPricing);
-//         return [
-//           {
-//             packageType: variation?.PackageType,
-//             StandardPricing: [...variation?.StandardPricing],
-//           },
-//         ];
-//       }
-
-//       return [
-//         {
-//           packageType: variation?.PackageType,
-//           StandardPricing: [...variation?.StandardPricing],
-//           hello: 'hello',
-//         },
-//       ];
-//     });
-//     // console.log(sortedVariations);
-//   }
-// };
-
 const useGetParts = () => {
   const { accessToken } = useAccessToken();
   const [loading, setLoading] = useState(true);
-
+  
   const fetchParts = useMemo(
     () =>
       async (partNumber, limit = 20) => {

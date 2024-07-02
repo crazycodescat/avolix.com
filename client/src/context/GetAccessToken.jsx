@@ -37,6 +37,7 @@ export const AccessTokenProvider = ({ children }) => {
       const newAccessToken = await getAccessToken();
 
       if (newAccessToken) {
+        console.log(newAccessToken);
         setAccessToken(newAccessToken);
       }
     };

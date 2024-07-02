@@ -1,8 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .carousel-container {
+    @apply relative max-w-full md:max-w-3xl mx-auto;
+  }
+
+  .carousel-wrapper {
+    @apply overflow-hidden relative rounded-lg;
+  }
+
+  .carousel-slide {
+    @apply relative min-w-full flex-shrink-0;
+  }
+
+  .carousel-image {
+    @apply w-full h-64 md:h-96 bg-gray-300 object-cover;
+  }
+
+  .carousel-overlay {
+    @apply flex flex-col justify-between  gap-2 absolute w-full h-[350px] m-4 top-0 left-0 bg-white bg-opacity-90 p-4 md:w-80;
+  }
+  /* .carousel-heading&DescriptionWrapper {
+    @apply flex flex-col  gap-2 absolute w-full h-[350px] m-4 top-0 left-0 bg-white bg-opacity-90 p-4 md:w-80;
+  } */
+
+  .carousel-heading {
+    @apply text-2xl capitalize md:text-2xl font-bold text-red-500;
+  }
+
+  .carousel-description {
+    @apply text-neutral-500 capitalize text-sm;
+  }
+  .carousel-overlay-button {
+    @apply p-4 bg-black w-fit active:bg-neutral-700 hover:bg-neutral-700;
+  }
+
+  .carousel-button {
+    @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 rounded-full p-2 focus:outline-none text-white;
+  }
+
+  .carousel-button-left {
+    @apply left-2 md:left-4;
+  }
+
+  .carousel-button-right {
+    @apply right-2 md:right-4;
+  }
+
+  .carousel-dot {
+    @apply w-2 h-2 md:w-4 md:h-4 mx-1 rounded-full focus:outline-none;
+  }
+
+  .carousel-dot-active {
+    @apply bg-blue-500;
+  }
+
+  .carousel-dot-inactive {
+    @apply bg-gray-300;
+  }
+}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -126,7 +186,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 table {
@@ -134,7 +194,6 @@ table {
   border-spacing: 0;
 }
 
-
-html{
+html {
   background-color: black;
 }
