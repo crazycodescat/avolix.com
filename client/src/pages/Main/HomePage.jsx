@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import Lists from "../../components/Home/Lists";
 import Carousel from "../../components/Carousel";
 import Grid from "../../components/Grid";
 import VerticalList from "../../components/VerticalList";
 import { useAccessToken } from "../../hooks/useAccessToken";
+import { IoSearch } from "react-icons/io5";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,68 +32,6 @@ const HomePage = () => {
     },
   ];
 
-  // const items = [
-  //   {
-  //     id: "1",
-  //     imageUrl:
-  //       "https://mm.digikey.com/Volume0/opasdata/d220001/medias/images/1244/AFP0RE16RS.jpg",
-  //     altText: "altText",
-  //     heading: "Automation & Control",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  //   {
-  //     id: "2",
-  //     imageUrl:
-  //       "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     altText: "altText",
-  //     heading: "Cables, Wires",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  //   {
-  //     id: "3",
-  //     imageUrl:
-  //       "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     altText: "altText",
-  //     heading: "Connectors",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  //   {
-  //     id: "4",
-  //     imageUrl:
-  //       "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     altText: "altText",
-  //     heading: "Enclosures, Hardware, Office",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  //   {
-  //     id: "5",
-  //     imageUrl:
-  //       "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     altText: "altText",
-  //     heading: "Resonators",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  //   {
-  //     id: "6",
-  //     imageUrl:
-  //       "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  //     altText: "altText",
-  //     heading: "Heading",
-  //     description:
-  //       "Description Description Description Description Description Description Description Description",
-  //     to: "/details/1", // Link to a specific detail page
-  //   },
-  // ];
   const items = [
     {
       img: "https://images.pexels.com/photos/2136243/pexels-photo-2136243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -144,8 +84,83 @@ const HomePage = () => {
   ];
   return (
     <>
-      <div className="p-4">
-        <Carousel items={items} navButtons={false} />
+      <div className="h-screen font-Merriweather flex flex-col gap-20 mt-12">
+        <div className="flex flex-col gap-4 items-center p-3">
+          <div className="">
+            <motion.h1
+              initial={{ y: 50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 1, delay: 0.4 },
+              }}
+              className="text-2xl text-center"
+            >
+              One Stop shop for all components
+            </motion.h1>
+          </div>
+          <div className="">
+            <motion.p
+              initial={{ y: 50, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 1, delay: 0.4 },
+              }}
+              className="text-xs font-thin text-center"
+            >
+              Find A Gigantic collection of the electronic components you need,
+              delivered fast, with AVOLIX.
+            </motion.p>
+          </div>
+        </div>
+
+        <div className="font-Inter flex flex-col gap-2 items-center justify-center">
+          <form>
+            <div className="flex justify-between h-10">
+              <input
+                type="search"
+                className="w-full text-xs text-black rounded-l-lg px-3 placeholder:text-[10px] focus:outline-none"
+                placeholder="Enter mfr. Part Number"
+                name=""
+                id=""
+              />
+              <button
+                className="flex justify-center rounded-r-lg items-center bg-primary01 p-4"
+                type="submit"
+              >
+                <IoSearch className="text-black text-xl" />
+              </button>
+            </div>
+          </form>
+          <p className="text-[10px] font-Merriweather font-extralight">
+            10M+ Available stocks
+          </p>
+        </div>
+
+        {/* fast tracking parts */}
+        <div className=" flex flex-col gap-6">
+          <div className="flex flex-col gap-1 items-center">
+            <h1 className="text-xl max-w-[200px]">Fast-tracking parts</h1>
+            <p className="text-xs font-extralight max-w-[140px] text-center">
+              Your urgent source for scarce components
+            </p>
+          </div>
+          <div className="max-w-[50px] mx-auto flex flex-col items-center justify-center">
+            <img
+              src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719936951/electronics%20parts%20selling%20website/inaeigq7jlttg3eymvzj.svg"
+              alt=""
+            />
+            <img
+              src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719936951/electronics%20parts%20selling%20website/fksgt4t7zhrjlfogghuo.svg"
+              alt=""
+            />
+            <img
+              src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719936951/electronics%20parts%20selling%20website/sg0zdiwwttmbwcjasl6n.svg"
+              alt=""
+            />
+          </div>
+        </div>
       </div>
     </>
   );

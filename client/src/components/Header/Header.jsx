@@ -1,11 +1,11 @@
-import { IoMenu } from 'react-icons/io5';
-import { FaRegUser, FaCartPlus } from 'react-icons/fa';
-import { useState, useRef } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import { FaMagnifyingGlass } from 'react-icons/fa6';
+import { IoMenu } from "react-icons/io5";
+import { FaRegUser, FaCartPlus } from "react-icons/fa";
+import { useState, useRef } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
-import MobileNavigation from './MobileNavigation';
+import MobileNavigation from "./MobileNavigation";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -32,7 +32,7 @@ const Header = () => {
         {open && <MobileNavigation navigationToggler={navigationToggler} />}
       </AnimatePresence>
       <div className="">
-        <div className="mx-auto flex justify-between px-3 max-w-[1400px]">
+        <div className="mx-auto flex justify-between px-3 max-w-[1000px]">
           <div className="flex gap-2">
             <button
               onClick={navigationToggler}
@@ -43,7 +43,7 @@ const Header = () => {
             <div className="flex">
               <Link to="/">
                 <img
-                  className="w-20"
+                  className="max-w-14 border border-primary01 border-solid shadow-md shadow-primary01"
                   src="https://res.cloudinary.com/ddx7todbr/image/upload/v1719227095/Electronics%20Parts%20Listing%20Website/azjar0db1ukk0wxya6ci.png"
                   alt=""
                 />
@@ -61,7 +61,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-center w-full bg-neutral-400 p-2">
+      {/* <div className="flex justify-center w-full p-2">
         <div className="flex flex-col gap-1">
           <form
             onSubmit={submitPartNumber}
@@ -82,7 +82,7 @@ const Header = () => {
               <FaMagnifyingGlass />
             </button>
           </form>
-          {/* Error's */}
+          Error's
           {enterPartNumber && (
             <div className="">
               <p className="text-base text-red-600 font-semibold uppercase underline">
@@ -91,7 +91,8 @@ const Header = () => {
             </div>
           )}
         </div>
-      </div>
+      </div> */}
+      <hr className="border border-solid border-primary01 mt-4" />
     </header>
   );
 };
