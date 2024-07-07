@@ -76,15 +76,15 @@ const RfqForm = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white py-4">
       <div
-        className="flex justify-between items-center p-2 bg-black cursor-pointer text-white"
+        className="flex justify-between items-center p-2 bg-white cursor-pointer text-black"
         onClick={rfqFormToggler}
       >
         <h1 className="text-base font-semibold">Request Quotation</h1>
-        <div className="p-1 rounded-full bg-white">
+        <div className="p-1 rounded-full bg-black">
           <FaChevronDown
-            className={`text-black ${
+            className={`text-white ${
               open ? `rotate-180 duration-300` : `rotate-0 duration-300`
             }`}
             fontSize={12}

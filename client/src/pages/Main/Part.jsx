@@ -32,7 +32,7 @@ const Part = () => {
   }, [accessToken, partnumber, fetchParts, setLoading]);
 
   return (
-    <div className="bg-page-bg h-full">
+    <div className="h-full">
       <div className="flex flex-col gap-8 text-black px-3 pt-3 xl:flex-row lg:justify-center max-w-[1200px] mx-auto">
         <div className="flex flex-col gap-6">
           {/* UPPER SECTION --> IMAGE AND DESCRIPTION */}

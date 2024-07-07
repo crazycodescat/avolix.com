@@ -1,0 +1,40 @@
+.animate-class1 {
+  animation-duration: 1s;
+  animation-name: categoryBouncer;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s; /* No delay for the first animation */
+}
+
+.animate-class2 {
+  animation-duration: 1s;
+  animation-name: categoryBouncer;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.4s; /* Delay the second animation by 0.4s */
+}
+
+.animate-class3 {
+  animation-duration: 1s;
+  animation-name: categoryBouncer;
+  position: relative;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.8s; /* Delay the third animation by 0.8s */
+}
+
+@keyframes categoryBouncer {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(100%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

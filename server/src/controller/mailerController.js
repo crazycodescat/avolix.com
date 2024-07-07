@@ -1,4 +1,4 @@
-import nodeMailer from "../utility/nodeMailer.js";
+import nodeMailer from '../utility/nodeMailer.js';
 
 const mailer = async (req, res) => {
   const {
@@ -11,6 +11,17 @@ const mailer = async (req, res) => {
     quantity,
     speacialInstructions,
   } = req.body;
+
+  console.log(
+    firstName,
+    lastName,
+    email,
+    phoneNumber,
+    partNumber,
+    manufacturer,
+    quantity,
+    speacialInstructions
+  );
 
   // HTML content with inline CSS
   const htmlContent = `
@@ -48,10 +59,10 @@ const mailer = async (req, res) => {
     const { status, message } = await nodeMailer(mailOptions);
     console.log(status, message, 32);
     if (status === 200) {
-      res.status(200).send("Email Sent Successfully!");
+      res.status(200).send('Email Sent Successfully!');
     }
   } catch (error) {
-    res.status(500).send("Error sending email. Please try again later.");
+    res.status(500).send('Error sending email. Please try again later.');
   }
 };
 

@@ -1,23 +1,23 @@
 /* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import { createContext, useEffect, useState } from 'react';
+import axios from 'axios';
 
 // Create AccessTokenContext context
 export const AccessTokenContext = createContext();
 
 export const AccessTokenProvider = ({ children }) => {
   const [accessToken, setAccessToken] = useState(null);
-
+  console.log(accessToken);
   // Function to get access token
   const getAccessToken = async () => {
     const requestBody = {
       client_id: import.meta.env.VITE_DIGIKEY_PROD_CLIENT_ID,
       client_secret: import.meta.env.VITE_DIGIKEY_PROD_CLIENT_SECRET,
-      grant_type: "client_credentials",
+      grant_type: 'client_credentials',
     };
 
     const headers = {
-      "Content-Type": "application/x-www-form-urlencoded",
+      'Content-Type': 'application/x-www-form-urlencoded',
     };
 
     try {
