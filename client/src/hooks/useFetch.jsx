@@ -11,7 +11,6 @@ const useFetch = () => {
   // Memoize the fetch function
   const fetch = useMemo(
     () => async (config) => {
-      console.log(import.meta.env.VITE_DIGIKEY_CATEGORIES);
       try {
         const res = await axios.request(config);
         return res;

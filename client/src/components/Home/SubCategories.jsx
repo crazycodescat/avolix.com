@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
 import { IoClose } from 'react-icons/io5';
+import { v4 as uuidv4 } from 'uuid';
 
 const SubCategories = ({
   subCategories,
@@ -8,10 +9,10 @@ const SubCategories = ({
   setShowSubCategories,
 }) => {
   const cat_subCategoryToggler = () => {
-    console.log('hello');
     setShowCategories(true);
     setShowSubCategories(false);
   };
+
   return (
     <motion.div className="flex flex-col gap-2 mb-12 mt-20 border-y border-dashed border-red-500 border-opacity-50 p-2">
       <div className="flex flex-col gap-2">
@@ -23,7 +24,6 @@ const SubCategories = ({
             <IoClose className="text-primary01 text-5xl" />
           </button>
         </div>
-        <span className="mt-6">{subCategories[0].Name}</span>
       </div>
 
       <div className="flex flex-col items-center gap-2 justify-between w-full">
@@ -32,15 +32,16 @@ const SubCategories = ({
           animate={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
           className="min-w-[100px] max-w-[200px]"
         >
-          <img src={subCategories[1].imageUrl} alt="" srcset="" />
+          <img src={subCategories[1].imageUrl} />
         </motion.div>
+        <span className="mt-6">{subCategories[0].Name}</span>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 h-fit w-full">
           {subCategories[0].Children.map((subCategory, idx) => {
             return (
               <>
                 <motion.div
-                  key={subCategory.CategoryId + idx} // Ensure each item has a unique key
+                  key={subCategory.CategoryId} // Ensure each item has a unique key
                   initial={{ y: -50, x: -50, opacity: 0 }}
                   animate={{
                     y: 0,
