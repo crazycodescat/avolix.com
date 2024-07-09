@@ -32,15 +32,6 @@ const Categories = () => {
         : null;
     });
 
-    console.log(subCategoriesData)
-
-    // const imageAddedSubCat = [
-    //   ...subCategoriesData,
-    //   {
-    //     imageUrl:
-    //       'https://res.cloudinary.com/ddx7todbr/image/upload/v1720357450/Electronics%20Parts%20Listing%20Website/categories/tnxqjrnnlwtqa6dr2spg.webp',
-    //   },
-    // ];
     setSubCategories(subCategoriesData);
     setShowCategories(false);
     setShowSubCategories(true);
@@ -66,7 +57,6 @@ const Categories = () => {
           const res = await fetch(config);
           if (res.status === 200) {
             const categoryWithImages = addImagesToCategories(res.data);
-            console.log(categoryWithImages);
             setCategories(categoryWithImages);
             setShowCategories(true);
           }
