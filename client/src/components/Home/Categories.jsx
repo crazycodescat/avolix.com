@@ -4,11 +4,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../../styles/scrollbar.css';
 import '../../styles/categorycard.css';
 import SubCategories from './SubCategories.jsx';
-import { images } from '../../../categoryImages.js';
+import images from '../../../categoryImages.js';
 
 // HOOKS
 import useFetch from '../../hooks/useFetch.jsx';
 import { useAccessToken } from '../../hooks/useAccessToken.jsx';
+
+const addImagesToCategories = (categoriesData) => {
+  const catWithImages = categoriesData.Categories.map((category, idx) => {
+    return { ...category, imageUrl: images[idx] };
+  });
+  return catWithImages;
+};
 
 const Categories = () => {
   const { accessToken } = useAccessToken();
@@ -21,18 +28,20 @@ const Categories = () => {
   const subCategorieFilter = (catId) => {
     const subCategoriesData = categories.filter((cat) => {
       return cat.CategoryId === catId
-        ? [...cat.Children, { catName: cat.Name }]
+        ? [...cat.Children, { catName: cat.Name, imageUrl: cat.imageUrl }]
         : null;
     });
 
-    const imageAddedSubCat = [
-      ...subCategoriesData,
-      {
-        imageUrl:
-          'https://res.cloudinary.com/ddx7todbr/image/upload/v1720357450/Electronics%20Parts%20Listing%20Website/categories/tnxqjrnnlwtqa6dr2spg.webp',
-      },
-    ];
-    setSubCategories(imageAddedSubCat);
+    console.log(subCategoriesData)
+
+    // const imageAddedSubCat = [
+    //   ...subCategoriesData,
+    //   {
+    //     imageUrl:
+    //       'https://res.cloudinary.com/ddx7todbr/image/upload/v1720357450/Electronics%20Parts%20Listing%20Website/categories/tnxqjrnnlwtqa6dr2spg.webp',
+    //   },
+    // ];
+    setSubCategories(subCategoriesData);
     setShowCategories(false);
     setShowSubCategories(true);
   };
@@ -56,7 +65,9 @@ const Categories = () => {
         try {
           const res = await fetch(config);
           if (res.status === 200) {
-            setCategories(res.data.Categories);
+            const categoryWithImages = addImagesToCategories(res.data);
+            console.log(categoryWithImages);
+            setCategories(categoryWithImages);
             setShowCategories(true);
           }
           setLoading(false);

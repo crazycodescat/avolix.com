@@ -12,7 +12,7 @@ const SubCategories = ({
     setShowCategories(true);
     setShowSubCategories(false);
   };
-
+  console.log(subCategories);
   return (
     <motion.div className="flex flex-col gap-2 mb-12 mt-20 border-y border-dashed border-red-500 border-opacity-50 p-2">
       <div className="flex flex-col gap-2">
@@ -32,11 +32,11 @@ const SubCategories = ({
           animate={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
           className="min-w-[100px] max-w-[200px]"
         >
-          <img src={subCategories[1].imageUrl} />
+          <img src={subCategories[0].imageUrl} />
         </motion.div>
         <span className="mt-6">{subCategories[0].Name}</span>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 h-fit w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4 h-fit w-full">
           {subCategories[0].Children.map((subCategory, idx) => {
             return (
               <>
