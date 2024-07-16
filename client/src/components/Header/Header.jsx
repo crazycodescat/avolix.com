@@ -1,11 +1,11 @@
-import { IoMenu } from "react-icons/io5";
-import { FaRegUser, FaCartPlus } from "react-icons/fa";
-import { useState, useRef } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { IoMenu } from 'react-icons/io5';
+import { FaRegUser, FaCartPlus } from 'react-icons/fa';
+import { useState, useRef } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
-import MobileNavigation from "./MobileNavigation";
+import MobileNavigation from './MobileNavigation';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -92,6 +92,19 @@ const Header = () => {
           )}
         </div>
       </div> */}
+
+      {/* Address section */}
+      <div className="max-w-[1000px] w-full mx-auto px-3">
+        <div className="flex flex-col items-end">
+          <span className="text-primary01 font-semibold text-xs">
+            72 Shelton St, London WC2H 9JQ,
+          </span>
+          <span className="text-primary01 font-semibold text-xs">
+            United Kingdom
+          </span>
+        </div>
+      </div>
+
       <hr className="border border-solid border-primary01 mt-4" />
     </header>
   );
