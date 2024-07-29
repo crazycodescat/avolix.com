@@ -95,7 +95,7 @@ const Categories = () => {
       )}
       {showCategories && (
         <div
-          className={`grid  grid-cols-2 md:grid-cols-3 gap-4 max-w-[1000px] mx-auto my-6 px-4 overflow-y-scroll h-96 py-2  border-y border-dashed border-red-500 border-opacity-50 p-2 `}
+          className={`grid  grid-cols-2 md:grid-cols-3 gap-4 max-w-[1000px] mx-auto my-6 px-4 overflow-y-scroll h-96 py-2  border-y border-dashed border-red-500 border-opacity- p-2`}
         >
           <AnimatePresence>
             {showCategories &&
@@ -119,7 +119,7 @@ const Categories = () => {
                   viewport={{ once: true }}
                   onClick={() => subCategorieFilter(cat.CategoryId)}
                   // onHoverEnd={setShowCategories((prev) => !prev)}
-                  className="animated_div flex flex-col gap-2 items-center px-2 py-2 ring-1 ring-primary01 hover:shadow-md transition-shadow duration-200 hover:shadow-primary01 cursor-pointer"
+                  className="animated_div flex flex-col gap-2 items-center px-2 py-2 ring-1  text-white font-Inter font-semibold ring-primary01 hover:shadow-md transition-shadow duration-200 hover:shadow-primary01 cursor-pointer"
                 >
                   <h4 className="text-xs text-center">{cat.Name}</h4>
                   <p className="text-[8px] text-center">{cat.ProductCount}</p>

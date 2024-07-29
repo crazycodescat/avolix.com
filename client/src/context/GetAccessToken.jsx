@@ -7,6 +7,7 @@ export const AccessTokenContext = createContext();
 
 export const AccessTokenProvider = ({ children }) => {
   const [accessToken, setAccessToken] = useState(null);
+  console.log(accessToken);
   // Function to get access token
   const getAccessToken = async () => {
     const requestBody = {

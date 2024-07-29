@@ -102,6 +102,7 @@ const HomePage = () => {
       subItems: ['Sub-item 3.1', 'Sub-item 4.2', 'Sub-item 4.3'],
     },
   ];
+
   return (
     <>
       <div className="h-screen font-Merriweather flex flex-col gap-20 mt-12">
@@ -135,25 +136,29 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="font-Inter flex flex-col gap-2 items-center justify-center">
-          <form onSubmit={submitPartNumber}>
-            <div className="flex justify-between h-10">
+        {/* Search Section */}
+        <div className="flex flex-col gap-2 items-center justify-center font-Inter">
+          <div className="flex  px-2 w-full">
+            <form
+              onSubmit={submitPartNumber}
+              className="max-w-[500px] w-full mx-auto flex"
+            >
               <input
                 ref={ref}
+                className="p-2 bg-white placeholder:text-black  text-xs w-full text-black rounded-l-lg px-3 placeholder:text-[10px] focus:outline-none"
                 type="search"
-                className="w-full text-xs text-black rounded-l-lg px-3 placeholder:text-[10px] focus:outline-none"
                 placeholder="Enter mfr. Part Number"
                 name="part number"
                 id=""
               />
               <button
-                className="flex justify-center rounded-r-lg items-center bg-primary01 p-4"
                 type="submit"
+                className="p-3 rounded-r-lg hover:bg-[#edc802] active:bg-primary01 bg-primary01"
               >
-                <IoSearch className="text-black text-xl" />
+                <IoSearch className="text-white text-xl" />
               </button>
-            </div>
-          </form>
+            </form>
+          </div>
           <p className="text-[10px] font-Merriweather font-extralight">
             10M+ Available stocks
           </p>
@@ -165,37 +170,6 @@ const HomePage = () => {
             </div>
           )}
         </div>
-
-        {/* <div className="flex justify-center w-full p-2">
-          <div className="flex flex-col gap-1">
-            <form
-              onSubmit={submitPartNumber}
-              className="flex justify-between rounded-lg"
-            >
-              <input
-                ref={ref}
-                className="text-neutral-900 p-4 w-full rounded-tl-md rounded-bl-md focus:outline-none"
-                type="search"
-                name="part number"
-                id=""
-                placeholder="Enter Mfr. Part Number"
-              />
-              <button
-                type="submit"
-                className="flex items-center justify-center bg-black w-16 rounded-tr-md rounded-br-md"
-              >
-                <FaMagnifyingGlass />
-              </button>
-            </form>
-            {enterPartNumber && (
-              <div className="">
-                <p className="text-base text-red-600 font-semibold uppercase underline">
-                  Enter Part Number
-                </p>
-              </div>
-            )}
-          </div>
-        </div> */}
 
         {/* fast tracking parts */}
         <div className=" flex flex-col gap-6">

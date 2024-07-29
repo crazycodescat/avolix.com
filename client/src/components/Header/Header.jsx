@@ -93,18 +93,6 @@ const Header = () => {
         </div>
       </div> */}
 
-      {/* Address section */}
-      <div className="max-w-[1000px] w-full mx-auto px-3">
-        <div className="flex flex-col items-end">
-          <span className="text-primary01 font-semibold text-xs">
-            72 Shelton St, London WC2H 9JQ,
-          </span>
-          <span className="text-primary01 font-semibold text-xs">
-            United Kingdom
-          </span>
-        </div>
-      </div>
-
       <hr className="border border-solid border-primary01 mt-4" />
     </header>
   );
